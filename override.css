@@ -1,0 +1,19 @@
+.container{
+	background-color: #CC6633;
+	padding: 30px;
+	border-radius:5%;
+}
+
+.jumbotron{
+	background-color: #FFCC99;
+}
+#foodbox{
+	background-color: #FFFFCC;
+	height: 300px;
+	border-radius:5%;
+}
+
+form{
+	padding-left: 250px;
+	padding-top: 125px;
+}
