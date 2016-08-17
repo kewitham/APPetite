@@ -1,19 +1,54 @@
+body{
+	background-color: #FFFFCC;
+	
+
+}
+
 .container{
-	background-color: #CC6633;
+	
 	padding: 30px;
 	border-radius:5%;
+
 }
 
 .jumbotron{
-	background-color: #FFCC99;
+	background-color: #fdbc2e;
+	font-family: 'Lobster', cursive;
 }
 #foodbox{
-	background-color: #FFFFCC;
-	height: 300px;
-	border-radius:5%;
+	background-color: #fee48d;
+	border-radius:5px;
+}
+
+#logo, h3{
+	color: #a94020;
 }
 
 form{
-	padding-left: 250px;
-	padding-top: 125px;
+	padding-left:25px;
+	padding-top: 110px;
+	font-family: 'Lobster', cursive;
+	color: #dc6744;
+
+}
+
+label{
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	color: #dc6744;
+}
+
+option{
+	font-size: 20px;
+	color: #dc6744;
+}
+
+#clickit {
+	margin-left:50%;
+	font-family: 'Lobster', cursive;
+	margin-top: 50px;
+	margin-bottom: 110px;
+	font-size: 20px;
+	color: #dc6744;
 }
