@@ -4,13 +4,16 @@
 	<meta charset="UTF-8">
 	<title>APPetite</title>
 
-
-	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<!-- Firebase Reference -->
+
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+
+
 
   <link rel="stylesheet" type="text/css" href="override.css">
 
@@ -24,7 +27,21 @@
   	<h3 class="text-center">calibrate your eating experience</h3>
   </div>
 
+
     <section id="foodbox">
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Meal
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a id="breakfast" href="#">Breakfast</a></li>
+    <li><a id="lunch" href="#">Lunch</a></li>
+    <li><a id="dinner" href="#">Dinner</a></li>
+  </ul>
+</div>
+
 
       <form class="form-inline">
 
@@ -69,6 +86,7 @@
       </ul>
     </div>
 
+
     <div class="dropdown form-group">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Timeframe
@@ -84,6 +102,10 @@
 </form>
     
   </section>
+
 </div>
+
+<!-- Javascript -->
+<script src="appetitelogic.js"></script>
 </body>
 </html>
