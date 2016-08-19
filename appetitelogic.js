@@ -4,7 +4,7 @@
 2. Create object by recording clicked selections (on .click, submit)
 4. Input all selected parameter values to find 6 random recipes from Spoontacular API.
 5. For each recipe, display api-generated image (that when clicked, opens up the written recipe instructions)
-6. When image is clicked, load written recipe, display spotify list with music matching the "mood" parameter). Spotify will display non playing, so we will need to do an on click to start playing music through player. 
+6. When image is clicked, load written recipe, display spotify list with music matching the "mood" parameter). Spotify will display non playing, so we will need to do an on click to start playing music through player.
 6. When image is clicked, use all parameters to display nearby farmers  markets (and grocery stores through Google Maps) through HomeCook API)
 7.
 */
