@@ -60,6 +60,24 @@
       </select>
 
       <label for="sel1"> Mood</label>
+
+      <select class="form-control" id="mood">
+        <option id="asian">Asian</option>
+        <option id="european">European</option>
+        <option id="american">American</option>
+        <option id="asian"> Latin American</option>
+        <option id="european">Eastern European</option>
+        <option id="american">Middle Eastern</option>
+        <option id="asian">African</option>
+        <option id="european">Asian</option>
+       </select>
+
+      <label for="sel1">Timeframe</label>
+      <select class="form-control" id="timeframe">
+        <option id="superfast">Super fast (15-30 mins)</option>
+        <option id="weekdayevening">Weekday evening (30-60 mins)</option>
+        <option id="gottime">I've got time (1hr+)</option>
+
       <select class="form-control" id="mood" onchange="setMood()">
         <option value="asian">Asian</option>
         <option value="european">European</option>
@@ -73,6 +91,7 @@
         <option value="fast">Super fast</option>
         <option value="medium">Weekday evening</option>
         <option value="slow">I've got time</option>
+
       </select>
        
   </form>
