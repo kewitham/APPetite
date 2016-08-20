@@ -43,12 +43,37 @@ select:active, select:hover{
 }
 
 
-#recipeBtn {
+#recipeBtn, #recipeBtn2  {
 	margin-left:45%;
 	font-family: 'Lobster', cursive;
 	margin-top: 50px;
-	margin-bottom: 110px;
+	margin-bottom: 50px;
 	font-size: 20px;
-	color: #F18F01;
+	background-color: #F18F01;
 	
+}
+
+.foodpics{
+	width: 200px;
+	float: left;
+	border-radius:50%;
+	
+   
+}
+
+#foodstyle{
+	padding-left: 25%;
+	padding-top: 100px;
+
+}
+
+
+#recipes {
+	margin:50px 30px 50px 80px;
+	padding: 30px;
+	border: #F18F01 solid 5px;
+	border-radius: 15px;
+	background-color: #F7F4F3; 
+	max-height: 400px;
+	overflow: scroll;
 }

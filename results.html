@@ -1,9 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<title>APPetite</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- Firebase Reference -->
+
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="override.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
 </head>
 <body>
 
+
+<div class="container">
+  <div class="jumbotron">
+  
+  	<h1 class="text-center" id="logo"><img src="assets/foodlogo.png">APPetite</h1>
+  	<h3 class="text-center">calibrate your eating experience</h3>
+  </div>
+
+
+    <section id="foodbox">
+
+    	<div id="foodstyle">
+    	 	<img class="foodpics" src="assets/foodpic1.jpg">
+    	 	<img class="foodpics" src="assets/foodpic2.jpg">
+    	 	<img class="foodpics" src="assets/foodpic3.jpg">
+    	 	<p style="clear: both;">
+    	 	<img class="foodpics" src="assets/foodpic4.jpg">
+    	 	<img class="foodpics" src="assets/foodpic5.jpg">
+    	 	<img class="foodpics" src="assets/foodpic6.jpg">
+    	 	<p style="clear: both;">
+    	
+    	</div>
+
+    	<div id="recipes">
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit elit sit amet odio hendrerit porta. Morbi nec scelerisque elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent fringilla convallis dolor, vitae venenatis mi faucibus ac. Aliquam sed venenatis lacus. Fusce vitae sem augue. Donec dignissim purus vitae lacus semper tristique. Mauris tortor nibh, hendrerit non quam ut, tempus accumsan nisl. Mauris pharetra, tellus at semper auctor, quam leo semper nunc, ut ullamcorper justo tortor at felis. Nunc ultrices tincidunt libero, vel cursus massa posuere vitae. Suspendisse hendrerit ultrices erat ut ultricies. In hac habitasse platea dictumst.</p>
+
+		<p>Morbi facilisis ante lorem. Duis eget molestie leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed rutrum, purus quis pulvinar eleifend, augue risus suscipit nisl, at mattis est ipsum sit amet dui. Suspendisse a dictum enim, a gravida arcu. Aenean enim metus, lobortis ut tempus et, accumsan a erat. Aliquam eget nunc mauris. Quisque placerat ligula eu lectus laoreet fermentum. Phasellus eu mauris dui. Donec et porta lacus, ac sodales risus. Vivamus lacinia sodales enim at posuere. Pellentesque at blandit lectus. Integer luctus scelerisque dapibus.</p>
+		
+		<p>Morbi facilisis ante lorem. Duis eget molestie leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed rutrum, purus quis pulvinar eleifend, augue risus suscipit nisl, at mattis est ipsum sit amet dui. Suspendisse a dictum enim, a gravida arcu. Aenean enim metus, lobortis ut tempus et, accumsan a erat. Aliquam eget nunc mauris. Quisque placerat ligula eu lectus laoreet fermentum. Phasellus eu mauris dui. Donec et porta lacus, ac sodales risus. Vivamus lacinia sodales enim at posuere. Pellentesque at blandit lectus. Integer luctus scelerisque dapibus.</p>
+		    		
+
+    	</div>
+
+
+
+     
+    	<a href="index.html" id="recipeBtn2" class="btn btn-primary" role="button">Wanna try something else?</a>
+
+    
+  </section>
+
+</div>
+
+<!-- Javascript -->
+<script src="appetitelogic.js"></script>
 </body>
 </html>
