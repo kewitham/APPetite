@@ -23,71 +23,74 @@
 
 
 <div class="container">
-  <div class="jumbotron">
-  
-  	<h1 class="text-center" id="logo"><img src="assets/foodlogo.png">APPetite</h1>
-  	<h3 class="text-center">calibrate your eating experience</h3>
-  </div>
 
-
-    <section id="foodbox">
-
-
-
-      <form class="form-inline">
-
-         <label for="sel1"> Meal</label>
-
-      <select class="form-control" id="meal" onchange="setMeal()">
-        <option value="breakfast">Breakfast</option>
-        <option value="main+course">Lunch</option>
-        <option value="main+course">Dinner</option>
-      </select>
-
- 
-    <div class="form-group">
-        <label for="exampleInputEmail1"></label>
-        <input type="ingredient" class="form-control" id="ingredient" placeholder="Main Ingredient">
-
-      </div>
-
-
-      <label for="sel1"> Nutrition</label>
-      <select class="form-control" id="nutrition" onchange="setNutrition()">
-        <option value="1500">Healthfreak</option>
-        <option value="2000">Health-conscious</option>
-        <option value="2500">Comfort food</option>
-      </select>
-
-      <label for="sel1"> Mood</label>
-
-      <select class="form-control" id="mood">
-        <option id="asian">Asian</option>
-        <option id="european">European</option>
-        <option id="american">American</option>
-        <option id="asian"> Latin American</option>
-        <option id="european">Eastern European</option>
-        <option id="american">Middle Eastern</option>
-        <option id="asian">African</option>
-        <option id="european">Asian</option>
-       </select>
-
-     
-
-
-      <label for="sel1">Timeframe</label>
-      <select class="form-control" id="timeframe">
-        <option value="fast">Super fast (15-30 mins)</option>
-        <option value="medium">Weekday evening (30-60 mins)</option>
-        <option value="slow">I've got time (1+ hr)</option>
-
-      </select>
-       
-  </form>
-
-  <a href="results.html" id="recipeBtn" class="btn btn-primary" role="button">Get a recipe!</a>
-
+  <section class="row">
+    <div class="jumbotron">
     
+    	<h1 class="text-center" id="logo"><img src="assets/foodlogo.png">APPetite</h1>
+    	<h3 class="text-center">calibrate your eating experience</h3>
+    </div>
+
+  </section>
+
+    <div class="row">
+      <section id="foodbox" class="col-md-12">
+
+
+
+        <form class="form-inline">
+
+           <label for="sel1"> Meal</label>
+
+        <select class="form-control" id="meal" onchange="setMeal()">
+          <option value="breakfast">Breakfast</option>
+          <option value="main+course">Lunch</option>
+          <option value="main+course">Dinner</option>
+        </select>
+
+   
+      <div class="form-group">
+          <label for="exampleInputEmail1"></label>
+          <input type="ingredient" class="form-control" id="ingredient" placeholder="Main Ingredient">
+
+        </div>
+
+
+        <label for="sel1"> Nutrition</label>
+        <select class="form-control" id="nutrition" onchange="setNutrition()">
+          <option value="1500">Healthfreak</option>
+          <option value="2000">Health-conscious</option>
+          <option value="2500">Comfort food</option>
+        </select>
+
+        <label for="sel1"> Mood</label>
+
+        <select class="form-control" id="mood">
+          <option id="asian">Asian</option>
+          <option id="european">European</option>
+          <option id="american">American</option>
+          <option id="asian">Latin American</option>
+          <option id="european">Eastern European</option>
+          <option id="american">Middle Eastern</option>
+          <option id="asian">African</option>
+        </select>
+
+       
+
+
+        <label for="sel1">Timeframe</label>
+        <select class="form-control" id="timeframe">
+          <option value="fast">Super fast (15-30 mins)</option>
+          <option value="medium">Weekday evening (30-60 mins)</option>
+          <option value="slow">I've got time (1+ hr)</option>
+
+        </select>
+         
+    </form>
+
+    <a href="results.html" id="recipeBtn" class="btn btn-primary " role="button">Get a recipe!</a>
+
+   </div>
   </section>
 
 </div>

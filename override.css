@@ -38,12 +38,8 @@ option{
 	
 }
 
-select:active, select:hover{
-	outline-color: red;
-}
 
-
-#recipeBtn, #recipeBtn2  {
+#recipeBtn  {
 	margin-left:45%;
 	font-family: 'Lobster', cursive;
 	margin-top: 50px;
@@ -53,27 +49,58 @@ select:active, select:hover{
 	
 }
 
+#recipeBtn2{
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	background-color: #F18F01;
+	margin-left: 7%;
+	margin-right: 7%;
+	margin-top: 10%;
+
+
+}
+
 .foodpics{
 	width: 200px;
-	float: left;
+	
 	border-radius:50%;
 	
    
 }
 
 #foodstyle{
-	padding-left: 25%;
-	padding-top: 100px;
-
+	margin-top: 7%;
 }
 
 
 #recipes {
-	margin:50px 30px 50px 80px;
-	padding: 30px;
+	margin-top: 5%;
+	padding-top: 2%;
 	border: #F18F01 solid 5px;
 	border-radius: 15px;
 	background-color: #F7F4F3; 
 	max-height: 400px;
 	overflow: scroll;
+}
+
+
+
+#map{
+	background-color: red;
+	height: 300px;
+	margin-top: 7%;
+	border-radius: 15px;
+}
+
+
+#music{
+	margin-top: 7%;
+	margin-bottom: 7%;
+	border-radius: 30px;
+}
+
+#f1:hover, #f3:hover, #f5:hover, #f2:hover, #f4:hover, #f6:hover {
+	  background: #F18F01;
+	  opacity: 0.7;
+
 }
