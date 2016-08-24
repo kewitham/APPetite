@@ -14,6 +14,11 @@ body{
 	border-radius:5px;
 }
 
+#foodbox2{
+	background-color: #052F5F;
+	border-radius:5px;
+}
+
 #logo, h3{
 	color: #F7F4F3;
 }
