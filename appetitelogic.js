@@ -43,8 +43,12 @@
 
 $("#recipeBtn").on("click", function(){
 
-	var ingredient = $("#ingredient").val().trim();
+  var ingredient = $("#ingredient").val().trim();
 	console.log(ingredient);
+ 
+ setMeal();
+ setNutrition();
+ setMood();
 
 	var getRecipe = {
 		meal:  meal,
@@ -53,10 +57,10 @@ $("#recipeBtn").on("click", function(){
 		ingredient: ingredient,
 	}
 
-	database.ref().push(getRecipe);
+	 database.ref().push(getRecipe);
 
 	//console.log(getRecipe.meal);
-
+  retrieveRecipes(getRecipe);
 
 	$("#ingredient").val("");
 
@@ -64,40 +68,78 @@ $("#recipeBtn").on("click", function(){
 
 });
 
-database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
-	console.log(childSnapshot.val());
+function retrieveRecipes(Recipe){
 
-	var meal = childSnapshot.val().meal;
-	var nutrition = childSnapshot.val().nutrition;
-	var mood = childSnapshot.val().mood;
-	var ingredient = childSnapshot.val().ingredient;
+  database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
-  function retrieveRecipes(button, i){
-        // get information from site, ajax request with queryURL
-        var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/queries/analyze?q=" + meal + ingredient + nutrition + mood "&api_key=&limit=6";
+  console.log(childSnapshot.val());
 
-        $.ajax({url: queryURL, method: 'GET'})
+  var meal = childSnapshot.val().meal;
+  var nutrition = childSnapshot.val().nutrition;
+  var mood = childSnapshot.val().mood;
+  var ingredient = childSnapshot.val().ingredient;
 
-            // wait until request is finished to run function
-            .done(function(response) {
-
-              var recipeDiv = $('<div class="recipe">');
-
-
-      var recipeImage = $("<img>");
+         var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?type=" + Recipe.meal + "&includeIngredients=" + Recipe.ingredient + "&maxCalories=" + Recipe.nutrition + "&cuisine=" + Recipe.mood + "&number=6&api_key=NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt";
+        //queryURL = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex'
+        console.log(queryURL);
+        
+        $.ajax({
+          url: queryURL, 
+          
+          method: 'GET',
+          //data: {cuisine: '=American'},
+          dataType: 'json',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader("X-Mashape-Authorization", "NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt")
+          }
+        })
       
-      //STORING SOURCE URL'S IN THE EMOIMAGE OBJECT
-      recipeImage.Url = response.data[i].; 
+     .done(function(response) {
+
+    //function logData (data) {
+    //Change data.source to data.something , where something is whichever part of the object you want returned.
+    //To see the whole object you can output it to your browser console using:
+            
+    //console.log(data);
+             
+
+             
+    //console.log(response);
+              var recipeDiv = $('<div class="recipeChoices">');
+
+              var recipeImage = $("<img>");
+      
+       recipeImage.Url = response.results[i].dishes.image;
+       recipeName = response.results[i].dishes.name;
      
       
-      recipeImage.attr('src', recipeImage.Url);
-      recipeImage.attr('alt', 'recipe');
+       recipeImage.attr('src', recipeImage.Url);
+       recipeImage.attr('alt', recipeName);
     
       
-      recipeDiv.append(recipeImage);
+       recipeDiv.append(recipeImage);
 
-      $('#recipeView').prepend(recipeImage);
+       $('#recipeImagechoices').prepend(recipeImage);
 
-            });
+       //location.href="results.html"
+  
+    });
+  });
+  }
+  
+  
+     
+      
+     //function displayMultiplerecipeImages(){
+    // for (var i=0; i < 7; i++){
+      // retrieveRecipes(i)
+       
+             
+             //.fail(function(fail) {
+               //console.log(fail);
+            // })
 
+
+    
+         // error: function(err) { console.log(err); },
