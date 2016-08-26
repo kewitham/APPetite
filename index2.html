@@ -42,7 +42,7 @@
 
            <label for="sel1"> Meal</label>
 
-        <select class="form-control" id="meal">
+        <select class="form-control" id="meal" onchange="setMeal()">
           <option value="breakfast">Breakfast</option>
           <option value="main+course">Lunch</option>
           <option value="main+course">Dinner</option>
@@ -57,22 +57,22 @@
 
 
         <label for="sel1"> Nutrition</label>
-        <select class="form-control" id="nutrition">
-          <option value="500">Healthfreak</option>
-          <option value="700">Health-conscious</option>
-          <option value="1500">Comfort food</option>
+        <select class="form-control" id="nutrition" onchange="setNutrition()">
+          <option value="1500">Healthfreak</option>
+          <option value="2000">Health-conscious</option>
+          <option value="2500">Comfort food</option>
         </select>
 
         <label for="sel1"> Mood</label>
 
         <select class="form-control" id="mood">
-          <option value="chinese">Chinese</option>
-          <option value="japanese">Japanese</option>
-          <option value="greek">Greek</option>
-          <option value="french">French</option>
-          <option value="italian">Italian</option>
-          <option value="mexican">Mexican</option>
-          <option value="american">American</option>
+          <option id="asian">Asian</option>
+          <option id="european">European</option>
+          <option id="american">American</option>
+          <option id="asian">Latin American</option>
+          <option id="european">Eastern European</option>
+          <option id="american">Middle Eastern</option>
+          <option id="asian">African</option>
         </select>
 
        
@@ -93,10 +93,7 @@
    </div>
   </section>
 
-  <section class="row">
-   
-
-  </section>
+ 
     <section id="foodbox2" class="row">
 
       <div id="foodstyle" class="col-md-7 col-md-offset-3">
@@ -111,10 +108,7 @@
       
       </div>
 
-      <div class="recipeChoices">
-      <div id="recipeImagechoices">
-      </div>
-      </div>
+      
 
       <div class="col-md-10 col-md-offset-1" id="recipes">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit elit sit amet odio hendrerit porta. Morbi nec scelerisque elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent fringilla convallis dolor, vitae venenatis mi faucibus ac. Aliquam sed venenatis lacus. Fusce vitae sem augue. Donec dignissim purus vitae lacus semper tristique. Mauris tortor nibh, hendrerit non quam ut, tempus accumsan nisl. Mauris pharetra, tellus at semper auctor, quam leo semper nunc, ut ullamcorper justo tortor at felis. Nunc ultrices tincidunt libero, vel cursus massa posuere vitae. Suspendisse hendrerit ultrices erat ut ultricies. In hac habitasse platea dictumst.</p>
@@ -130,7 +124,7 @@
       
         <div id="bottom" class="row col-md-offset-1">
       
-         <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Atamspam%3Aplaylist%3A66VJ6Sn4WEIAABDlDNVRa1" width="300" height="300" frameborder="0" allowtransparency="true"></iframe>
+          <iframe class="col-md-3" id="music" src="https://embed.spotify.com/?uri=spotify%3Auser%3Atamspam%3Aplaylist%3A5eNcjiry9XpP073uiOun5I" width="300" height="300" frameborder="0" allowtransparency="true"></iframe>
         
 
 
@@ -141,6 +135,8 @@
 
 
         </div>
+
+        </section>
 
 </div>
 
