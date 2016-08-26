@@ -45,7 +45,7 @@ option{
 
 
 #recipeBtn  {
-	margin-left:45%;
+	margin-left:36%;
 	font-family: 'Lobster', cursive;
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -59,6 +59,17 @@ option{
 	font-size: 20px;
 	background-color: #F18F01;
 	margin-left: 7%;
+	margin-right: 10%;
+	margin-top: 10%;
+
+
+}
+
+#recipeBtn3{
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	background-color: #F18F01;
+	margin-left: 7%;
 	margin-right: 7%;
 	margin-top: 10%;
 
@@ -66,16 +77,20 @@ option{
 }
 
 .foodpics{
-	width: 200px;
 	
 	border-radius:50%;
-	
-   
+	width: 250px;
+	height: 200px;
+	margin-left: 10%;
+
 }
 
-#foodstyle{
-	margin-top: 7%;
-}
+.foodpics:hover{
+	background: #F18F01;
+	  opacity: 0.7;
+
+	}
+
 
 
 #recipes {
@@ -104,9 +119,7 @@ option{
 	border-radius: 30px;
 }
 
-#f1:hover, #f3:hover, #f5:hover, #f2:hover, #f4:hover, #f6:hover {
-	  background: #F18F01;
-	  opacity: 0.7;
 
-}
+
+
 

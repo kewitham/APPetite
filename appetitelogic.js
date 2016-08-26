@@ -9,7 +9,22 @@
 7.
 */
 // Initialize Firebase
+
+
 $(document).ready(function() {
+
+// Taylor has added the below
+
+    $('#bottom').hide();
+
+    $('#foodbox #recipeBtn').click(function(){
+        $('#bottom').fadeIn(500);
+        return false;
+    });
+
+});
+//end of Taylor edit
+  
 
     var config = {
         apiKey: "AIzaSyA64XfuG6Mr7fNboYH5g3nUnjtbjjXLdcs",
@@ -145,6 +160,4 @@ $(document).ready(function() {
         };
     });
 
-
-});
 //};
