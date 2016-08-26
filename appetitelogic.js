@@ -8,96 +8,113 @@
 6. When image is clicked, use all parameters to display nearby farmers  markets (and grocery stores through Google Maps) through HomeCook API)
 7.
 */
-
 // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyA64XfuG6Mr7fNboYH5g3nUnjtbjjXLdcs",
     authDomain: "appetite-d2b29.firebaseapp.com",
     databaseURL: "https://appetite-d2b29.firebaseio.com",
     storageBucket: "appetite-d2b29.appspot.com",
-  };
-  firebase.initializeApp(config);
-
-  var database = firebase.database();
-
-    var meal;
-    function setMeal(){
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+var meal;
+function setMeal() {
     meal = document.getElementById('meal').value;
     console.log(meal);
-    };
-    var nutrition;
-    function setNutrition(){
+}
+;var nutrition;
+function setNutrition() {
     nutrition = document.getElementById('nutrition').value;
     console.log(nutrition);
-    };
-    var mood;
-    function setMood(){
+}
+;var mood;
+function setMood() {
     mood = document.getElementById('mood').value;
     console.log(mood);
-    };
-    //var timeframe;
-  //  function setTimeframe(){
-  //  timeframe = document.getElementById('timeframe').value;
-   // console.log(timeframe);
-  //  };
-
-$("#recipeBtn").on("click", function(){
-
-	var ingredient = $("#ingredient").val().trim();
-	console.log(ingredient);
-
-	var getRecipe = {
-		meal:  meal,
-		nutrition: nutrition,
-		mood: mood,
-		ingredient: ingredient,
-	}
-
-	database.ref().push(getRecipe);
-
-	//console.log(getRecipe.meal);
-
-
-	$("#ingredient").val("");
-
-	return false;
+}
+;//var timeframe;
+//  function setTimeframe(){
+//  timeframe = document.getElementById('timeframe').value;
+// console.log(timeframe);
+//  };
+$("#recipeBtn").on("click", function() {
+    var ingredient = $("#ingredient").val().trim();
+    console.log(ingredient);
+    setMeal();
+    setNutrition();
+    setMood();
+    var getRecipe = {
+        meal: meal,
+        nutrition: nutrition,
+        mood: mood,
+        ingredient: ingredient,
+    }
+    
+    //console.log(getRecipe.meal);
+    retrieveRecipes(getRecipe);
+    $("#ingredient").val("");
+    
+    return false;
 
 });
 
-database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
-	console.log(childSnapshot.val());
+function retrieveRecipes(i) {
+    database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+        console.log(childSnapshot.val());
+        var meal = childSnapshot.val().meal;
+        var nutrition = childSnapshot.val().nutrition;
+        var mood = childSnapshot.val().mood;
+        var ingredient = childSnapshot.val().ingredient;
+        var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?type=" + meal + "&includeIngredients=" + ingredient + "&maxCalories=" + nutrition + "&cuisine=" + mood + "&api_key=NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt";
+        //queryURL = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex'
+        console.log(queryURL);
+        $.ajax({
+            //async:false,
+            url: queryURL,
+            method: 'GET',
+            //data: {cuisine: '=American'},
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("X-Mashape-Authorization", "NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt")
+            }
+        }).done(function(response) {
+            console.log(response);
 
-	var meal = childSnapshot.val().meal;
-	var nutrition = childSnapshot.val().nutrition;
-	var mood = childSnapshot.val().mood;
-	var ingredient = childSnapshot.val().ingredient;
+       
+            //function logData (response) {
+            database.ref().push(response)
 
-  function retrieveRecipes(button, i){
-        // get information from site, ajax request with queryURL
-        var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/queries/analyze?q=" + meal + ingredient + nutrition + mood "&api_key=&limit=6";
+        });
 
-        $.ajax({url: queryURL, method: 'GET'})
+  
+         function addRecipes(i){ 
+          var recipeDiv = $('<div class="recipeChoices">');
+            var recipeImage = $('<img id="recipeImagechoices">');
+            recipeImage.Url = response.results[i].dishes.image;
+            recipeName = response.results[i].dishes.name;
+            recipeImage.attr('src', recipeImage.Url);
+            recipeImage.attr('alt', recipeName);
+            recipeDiv.append(recipeImage);
+            $('#recipeImagechoices').prepend(recipeImage);
 
-            // wait until request is finished to run function
-            .done(function(response) {
-
-              var recipeDiv = $('<div class="recipe">');
-
-
-      var recipeImage = $("<img>");
-      
-      //STORING SOURCE URL'S IN THE EMOIMAGE OBJECT
-      recipeImage.Url = response.data[i].; 
-     
-      
-      recipeImage.attr('src', recipeImage.Url);
-      recipeImage.attr('alt', 'recipe');
+            };
+            
+           });
+        };
     
+            function displayMultipleRecipes(){
+            for (var i=0; i < 7; i++){
+            retrieveRecipes(this, i)
+            addRecipes(this, i)
+
+         };
+            
+          }
+
       
-      recipeDiv.append(recipeImage);
 
-      $('#recipeView').prepend(recipeImage);
+         
 
-            });
-
+      //$( document ).ready(function() {      
+      
