@@ -112,11 +112,12 @@ $(document).ready(function() {
             });
         });
         //database.ref().push(response)
-        function revealrecipe(recipetext){
-           var p_revealrecipe = $('<p id="p_revealrecipe">')[0];
-            $('#p_revealrecipe').text(recipetext);
-        }
-
+        function revealrecipe(recipebutton){
+           // for j=0{
+           var p_revealrecipe = $('<p id="p_revealrecipe">');
+            $('#p_revealrecipe').text(recipebutton);
+      //  }
+    }
 
 
         function addRecipes(response) {
@@ -131,12 +132,35 @@ $(document).ready(function() {
                 recipeDiv.append(recipeImage);
                 $('#recipeImagechoices').prepend(recipeImage);
                 
-                var recipeurl = response.results[j].url;
+                var recipeid = response.results[j].id;
                 //$('recipeImage[').on("click", revealrecipe(recipetext))
-                recipeImage[0].onclick = function() {getRecipetext(recipeurl);};
+                recipeImage[0].onclick = function() {getRecipetext(recipeid);};
             }
 
-        function getRecipetext(recipeurl){
+        function getRecipetext(recipeid){
+            var queryURL = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + recipeid + '/information?includeNutrition=false'
+            //var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/extract?forceExtraction=false&url="+ recipeurl;
+            //&api_key=NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt";
+            console.log(queryURL);
+            $.ajax({
+
+                url: queryURL,
+                method: 'GET',
+                dataType: 'json',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("X-Mashape-Authorization", "NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt")
+                }
+            }).done(function(response) {
+                console.log(response);
+                // var results = response
+                recipeurl = response.sourceUrl;
+                extractRecipe(recipeurl)
+
+            });
+        }
+
+        function extractRecipe(recipeurl){
+            //var queryURL = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + recipeid + '/information?includeNutrition=false'
             var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/extract?forceExtraction=false&url="+ recipeurl;
             //&api_key=NeDyt1ljNRmshSl2ru2hVQZc8S1jp1omjQVjsneUqixtlRDRCt";
             console.log(queryURL);
@@ -151,8 +175,11 @@ $(document).ready(function() {
             }).done(function(response) {
                 console.log(response);
                 // var results = response
-                recipetext = response.results[j].steps;
-                revealrecipe(recipetext)
+                recipeltitle = JSON.stringify(response.title);
+                recipelink = JSON.stringify(response.sourceUrl);
+                var recipebutton = $('<input type="button" src="recipelink" value="recipeltitle" id="recipeBtn3" class="btn btn-primary col-md-2 " role="button" target="_blank">');
+                $("body").append(recipebutton);
+                revealrecipe(recipebutton)
 
             });
         }
