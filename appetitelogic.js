@@ -175,10 +175,11 @@ $(document).ready(function() {
             }).done(function(response) {
                 console.log(response);
                 // var results = response
-                recipeltitle = JSON.stringify(response.title);
+                recipetitle = JSON.stringify(response.title);
                 recipelink = JSON.stringify(response.sourceUrl);
-                var recipebutton = $('<input type="button" src="recipelink" value="recipeltitle" id="recipeBtn3" class="btn btn-primary col-md-2 " role="button" target="_blank">');
-                $("body").append(recipebutton);
+                //var recipebutton = $('<input type="button" src="recipelink" value="recipeltitle" id="recipeBtn3" class="btn btn-primary col-md-2 " role="button" target="_blank">');
+                //$("body").append(recipebutton);
+                recipebutton = recipetitle + "  " + recipelink
                 revealrecipe(recipebutton)
 
             });
