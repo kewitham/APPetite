@@ -2,11 +2,11 @@
 
 A recipe search experience that delights all the senses while carrying out the activity of cooking. APPetite cultivates the ideal recipe based on your preferences, allows you to set your preferred musical ambience, and maps the grocery stores nearest to you.
 
-
+-------------------------------------------------
 ## Screenshots
 
 Include a one or two screenshots of main UI/UX points of your app and how it solves a problem
-
+------------------------------------------------
 
 ## Technologies used
 
@@ -18,7 +18,7 @@ You can give a brief listing of the technologies you've learned and applied here
 - Google Firebase
 - HTML/CSS
 - jQuery
-- AJAX/JSON
+- AJAX
 - Bootstrap
 
 
@@ -49,7 +49,7 @@ https://developer.spotify.com/web-api/
 https://firebase.google.com/
 - jQuery
 https://jquery.com/download/
-- AJAX/JSON
+- AJAX
 https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started
 https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
 - Bootstrap
@@ -62,7 +62,7 @@ https://www.bootstrapcdn.com/
 * Atom & Sublime Text
 * Google Chrome
 
-
+-------------------------------------------------
 ## Walk throughs of code
 For Project presentation, you can include snippets of code you found buggy, interesting, or are overall proud of here.  Try to limit the quantity and size to quick readable bits.
 
@@ -75,13 +75,13 @@ function awesomeThing() {
     //...
 }
 ```
-
+----------------------------------------------------
 
 ## Authors
 
 * **Katie Witham** - *Spoonacular API Integration* - [Katie Witham](https://github.com/kewitham)
 
-* **Taylor McCullough** - *HTML/CSS/Graphic Design/Spotify API Integration* - [Taylor McCullough](https://github.com/shirobutterfly)
+* **Taylor McCullough** - *HTML/CSS/Graphic Design/Spotify Integration* - [Taylor McCullough](https://github.com/shirobutterfly)
 
 * **Ivette Illyn** - *Trello Project Management/Google Maps API Integration/Google Slides Presentation* - [Ivette Illyn](https://github.com/illynabruin92)
 
