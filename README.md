@@ -79,11 +79,11 @@ function awesomeThing() {
 
 ## Authors
 
-* **Katie Witham** - *Spoonacular API* - [Katie Witham](https://github.com/kewitham)
+* **Katie Witham** - *Spoonacular API Integration* - [Katie Witham](https://github.com/kewitham)
 
 * **Taylor McCullough** - *HTML/CSS/Graphic Design* - [Taylor McCullough](https://github.com/shirobutterfly)
 
-* **Ivette Illyn** - *Project Management/Google Maps API/Google Slides Presentation* - [Ivette Illyn](https://github.com/illynabruin92)
+* **Ivette Illyn** - *Trello Project Management/Google Maps API Integration/Google Slides Presentation* - [Ivette Illyn](https://github.com/illynabruin92)
 
 
 
